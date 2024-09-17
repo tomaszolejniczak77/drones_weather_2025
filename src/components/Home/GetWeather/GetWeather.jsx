@@ -17,8 +17,7 @@ const GetWeather = ({ position }) => {
           days: 3,
         },
         headers: {
-          "x-rapidapi-key":
-            "515c30c181msh02f0ad42e27e21cp1fbe1ajsnb616cd11381a",
+          "x-rapidapi-key": import.meta.env.REACT_APP_MY_KEY,
           "x-rapidapi-host": "weatherapi-com.p.rapidapi.com",
         },
       };
