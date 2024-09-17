@@ -4,42 +4,46 @@ import { WeatherContext } from "../../../context/WeatherContext";
 import WeatherInfo from "./WeatherInfo/WeatherInfo";
 import WeatherChart from "./WeatherChart/WeatherChart";
 import Buttons from "./Buttons/Buttons";
+import TilesData from "./TilesData/TilesData";
 
 const Weather = () => {
   const { weatherData } = useContext(WeatherContext);
+  const [tilesData, setTilesData] = useState([]);
+  const [activeTile, setActiveTile] = useState("Temperatura");
 
   const [day, setDay] = useState(0);
 
   if (!weatherData) {
-    return <p>Pobieranie pogody...</p>;
+    return <p className={styles.fetchingWeather}>Pobieranie pogody...</p>;
   }
 
   const { location, current, forecast } = weatherData;
 
   const { forecastday } = forecast;
 
-  const today = forecastday[day].hour;
+  const chosenDayForecast = forecastday[day].hour;
 
   const hourNow = current.last_updated.slice(11, 13);
-
-  const data = [];
-
-  // console.log(today);
-
-  today.map((item, id) =>
-    data.push({
-      name: `${item.time.slice(11, 13)}`,
-      ciśnienie: `${item.pressure_mb}`,
-      unit: "hPa",
-    })
-  );
-
-  // console.log(data);
 
   return (
     <>
       <WeatherInfo location={location} />
-      <WeatherChart data={data} hourNow={hourNow} />
+      <TilesData
+        setTilesData={setTilesData}
+        tilesData={tilesData}
+        activeTile={activeTile}
+        setActiveTile={setActiveTile}
+      />
+      {weatherData && (
+        <WeatherChart
+          hourNow={hourNow}
+          activeTile={activeTile}
+          tilesData={tilesData}
+          chosenDayForecast={chosenDayForecast}
+          day={day}
+        />
+      )}
+
       <Buttons setDay={setDay} />
     </>
   );

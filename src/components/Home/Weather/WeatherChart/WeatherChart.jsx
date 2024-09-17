@@ -13,7 +13,25 @@ import {
 
 import styles from "./WeatherChart.module.css";
 
-const WeatherChart = ({ data, hourNow }) => {
+const WeatherChart = ({
+  hourNow,
+  activeTile,
+  chosenDayForecast,
+  tilesData,
+  day,
+}) => {
+  const data = [];
+
+  const activeTileData = tilesData.filter((item) => item.title === activeTile);
+
+  chosenDayForecast.map((item) =>
+    data.push({
+      name: `${item.time.slice(11, 13)}`,
+      [`${activeTileData[0]?.title}`]: item[activeTileData[0]?.dataName],
+      unit: `${activeTileData[0]?.unit}`,
+    })
+  );
+
   return (
     <>
       <div className={styles.chart}>
@@ -37,7 +55,7 @@ const WeatherChart = ({ data, hourNow }) => {
             />
             <CartesianGrid opacity={0.1} vertical={false} />
             <Tooltip content={<CustomTooltip />} />
-            <ReferenceLine x={hourNow} stroke="darkgreen" />
+            {day === 0 && <ReferenceLine x={hourNow} stroke="darkgreen" />}
             <Legend
               align="right"
               verticalAlign="top"
@@ -46,7 +64,7 @@ const WeatherChart = ({ data, hourNow }) => {
             />
             <Area
               type="monotone"
-              dataKey="ciśnienie"
+              dataKey={activeTile}
               stroke="#82ca9d"
               fillOpacity={1}
               fill="url(#temperatura)"

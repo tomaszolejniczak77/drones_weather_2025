@@ -1,0 +1,15 @@
+.tiles {
+  display: flex;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  background-color: green;
+  border-radius: 5px;
+  cursor: pointer;
+}
