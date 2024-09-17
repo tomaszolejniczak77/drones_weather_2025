@@ -1,3 +1,13 @@
 .chart {
-  height: 250px;
+  height: 200px;
+}
+
+.tooltip {
+  background-color: #82ca9d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 75px;
+  border-radius: 5px;
 }

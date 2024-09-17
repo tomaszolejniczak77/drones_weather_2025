@@ -32,7 +32,7 @@ const GetWeather = ({ position }) => {
     };
 
     fetchData();
-  }, [location]);
+  }, [position]);
 };
 
 export default GetWeather;

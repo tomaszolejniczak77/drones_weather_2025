@@ -1,11 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./Weather.module.css";
 import { WeatherContext } from "../../../context/WeatherContext";
 import WeatherInfo from "./WeatherInfo/WeatherInfo";
 import WeatherChart from "./WeatherChart/WeatherChart";
+import Buttons from "./Buttons/Buttons";
 
 const Weather = () => {
   const { weatherData } = useContext(WeatherContext);
+
+  const [day, setDay] = useState(0);
 
   if (!weatherData) {
     return <p>Pobieranie pogody...</p>;
@@ -15,25 +18,29 @@ const Weather = () => {
 
   const { forecastday } = forecast;
 
-  const today = forecastday[0].hour;
+  const today = forecastday[day].hour;
+
+  const hourNow = current.last_updated.slice(11, 13);
 
   const data = [];
 
-  // today.map((item, id) => console.log(item.time.slice(11, 13)));
+  // console.log(today);
 
   today.map((item, id) =>
     data.push({
       name: `${item.time.slice(11, 13)}`,
-      temperatura: `${item.temp_c}`,
+      ciśnienie: `${item.pressure_mb}`,
+      unit: "hPa",
     })
   );
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <>
       <WeatherInfo location={location} />
-      <WeatherChart data={data} />
+      <WeatherChart data={data} hourNow={hourNow} />
+      <Buttons setDay={setDay} />
     </>
   );
 };
