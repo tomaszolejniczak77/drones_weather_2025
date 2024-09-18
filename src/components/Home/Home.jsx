@@ -4,6 +4,7 @@ import Nav from "./Nav/Nav";
 import Map from "./Map/Map";
 import Weather from "./Weather/Weather";
 import GetWeather from "./GetWeather/GetWeather";
+import Footer from "./Footer/Footer";
 import { LocationContext } from "../../context/LocationContext";
 
 const Home = () => {
@@ -15,10 +16,13 @@ const Home = () => {
 
   return (
     <>
-      <Map />
-      <Nav />
-      <GetWeather position={position} />
-      <Weather />
+      <div className={styles.home}>
+        <Map />
+        <Nav />
+        <GetWeather position={position} />
+        <Weather />
+        <Footer />
+      </div>
     </>
   );
 };

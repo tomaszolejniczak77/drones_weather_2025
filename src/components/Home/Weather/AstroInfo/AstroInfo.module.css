@@ -1,0 +1,23 @@
+.astro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  background-color: green;
+  border-radius: 10px;
+  margin: 0.5rem;
+}
+
+.astro p {
+  margin: 0;
+}
+
+.extraTitle {
+  font-size: small;
+}
+
+.extraValue {
+  font-size: small;
+}

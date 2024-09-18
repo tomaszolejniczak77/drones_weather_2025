@@ -2,10 +2,17 @@ import React, { useContext, useEffect, useState } from "react";
 import { WeatherContext } from "../../../../context/WeatherContext";
 import Tiles from "../Tiles/Tiles";
 
-const TilesData = ({ setTilesData, tilesData, setActiveTile, activeTile }) => {
+const TilesData = ({
+  setTilesData,
+  tilesData,
+  setActiveTile,
+  activeTile,
+  astroData,
+}) => {
   const { weatherData } = useContext(WeatherContext);
 
   const { current } = weatherData;
+
   // console.log(current);
 
   const tiles = [
@@ -50,11 +57,23 @@ const TilesData = ({ setTilesData, tilesData, setActiveTile, activeTile }) => {
       title: "Ciśnienie",
       value: `${current.pressure_mb}`,
       dataName: "pressure_mb",
-      unit: "kPh",
+      unit: "hPa",
       isExtended: false,
       extraTitle: "",
       extraValue: "",
       extraUnit: "",
+      isActive: false,
+    },
+    {
+      id: 5,
+      title: "Porywy wiatru",
+      value: `${current.gust_kph}`,
+      dataName: "gust_kph",
+      unit: "km/h",
+      isExtended: true,
+      extraTitle: "",
+      extraValue: `${((current.gust_kph * 1000) / 3600).toFixed(2)}`,
+      extraUnit: "m/s",
       isActive: false,
     },
   ];
@@ -66,10 +85,12 @@ const TilesData = ({ setTilesData, tilesData, setActiveTile, activeTile }) => {
   return (
     <>
       <Tiles
+        current={current}
         tilesData={tilesData}
         setTilesData={setTilesData}
         setActiveTile={setActiveTile}
         activeTile={activeTile}
+        astroData={astroData}
       />
     </>
   );

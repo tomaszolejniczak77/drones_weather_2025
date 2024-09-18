@@ -23,6 +23,8 @@ const Weather = () => {
 
   const chosenDayForecast = forecastday[day].hour;
 
+  const astroData = forecastday[day].astro;
+
   const hourNow = current.last_updated.slice(11, 13);
 
   return (
@@ -33,6 +35,7 @@ const Weather = () => {
         tilesData={tilesData}
         activeTile={activeTile}
         setActiveTile={setActiveTile}
+        astroData={astroData}
       />
       {weatherData && (
         <WeatherChart

@@ -1,0 +1,5 @@
+.windIcon {
+  display: inline-block;
+  font-size: 25px; /* Rozmiar strzałki */
+  transition: transform 0.3s ease; /* Płynna animacja rotacji */
+}

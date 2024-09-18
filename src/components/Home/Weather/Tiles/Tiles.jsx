@@ -1,7 +1,16 @@
 import React from "react";
 import styles from "./Tiles.module.css";
+import WindIcon from "../WindIcon/WindIcon";
+import AstroInfo from "../AstroInfo/AstroInfo";
 
-const Tiles = ({ tilesData, activeTile, setActiveTile, setTilesData }) => {
+const Tiles = ({
+  tilesData,
+  activeTile,
+  setActiveTile,
+  setTilesData,
+  current,
+  astroData,
+}) => {
   function handleTileName(name) {
     setActiveTile(name);
     const updatedTilesdata = tilesData.map((item) =>
@@ -15,6 +24,10 @@ const Tiles = ({ tilesData, activeTile, setActiveTile, setTilesData }) => {
   return (
     <>
       <div className={styles.tiles}>
+        <div className={styles.icon}>
+          <img src={current.condition.icon} alt="Weather Icon" />
+        </div>
+
         {tilesData.map((item, id) => (
           <div
             className={`${styles.tile} ${item.isActive ? styles.active : ""}`}
@@ -42,6 +55,14 @@ const Tiles = ({ tilesData, activeTile, setActiveTile, setTilesData }) => {
             )}
           </div>
         ))}
+
+        <div className={styles.icon}>
+          <p>Kierunek wiatru</p>
+          <WindIcon current={current} />
+          <p className={styles.extraValue}>{current.wind_dir}</p>
+        </div>
+
+        <AstroInfo astroData={astroData} />
       </div>
     </>
   );
