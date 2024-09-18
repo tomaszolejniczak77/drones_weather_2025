@@ -2,12 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import { WeatherContext } from "../../../../context/WeatherContext";
 import Tiles from "../Tiles/Tiles";
 
-const TilesData = ({ setTilesData, tilesData, setActiveTile }) => {
+const TilesData = ({ setTilesData, tilesData, setActiveTile, activeTile }) => {
   const { weatherData } = useContext(WeatherContext);
 
   const { current } = weatherData;
-
-  //   console.log(current);
+  // console.log(current);
 
   const tiles = [
     {
@@ -19,6 +18,7 @@ const TilesData = ({ setTilesData, tilesData, setActiveTile }) => {
       isExtended: true,
       extraTitle: "Odczuwalna",
       extraValue: `${current.feelslike_c}`,
+      extraUnit: "°C",
       isActive: true,
     },
     {
@@ -27,17 +27,50 @@ const TilesData = ({ setTilesData, tilesData, setActiveTile }) => {
       value: `${current.cloud}`,
       dataName: "cloud",
       unit: "%",
+      isExtended: true,
+      extraTitle: "Opady",
+      extraValue: `${current.precip_mm}`,
+      extraUnit: "mm",
+      isActive: false,
+    },
+    {
+      id: 3,
+      title: "Wiatr",
+      value: `${current.wind_kph}`,
+      dataName: "wind_kph",
+      unit: "km/h",
+      isExtended: true,
+      extraTitle: "",
+      extraValue: `${((current.wind_kph * 1000) / 3600).toFixed(2)}`,
+      extraUnit: "m/s",
+      isActive: false,
+    },
+    {
+      id: 4,
+      title: "Ciśnienie",
+      value: `${current.pressure_mb}`,
+      dataName: "pressure_mb",
+      unit: "kPh",
+      isExtended: false,
+      extraTitle: "",
+      extraValue: "",
+      extraUnit: "",
       isActive: false,
     },
   ];
 
   useEffect(() => {
     setTilesData(tiles);
-  }, []);
+  }, [current]);
 
   return (
     <>
-      <Tiles tilesData={tilesData} setActiveTile={setActiveTile} />
+      <Tiles
+        tilesData={tilesData}
+        setTilesData={setTilesData}
+        setActiveTile={setActiveTile}
+        activeTile={activeTile}
+      />
     </>
   );
 };

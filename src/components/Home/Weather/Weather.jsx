@@ -43,7 +43,6 @@ const Weather = () => {
           day={day}
         />
       )}
-
       <Buttons setDay={setDay} />
     </>
   );

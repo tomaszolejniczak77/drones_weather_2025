@@ -1,15 +1,38 @@
 .tiles {
   display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
 }
 
 .tile {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 120px;
   height: 120px;
   background-color: green;
   border-radius: 5px;
+  margin: 0.5rem;
   cursor: pointer;
+}
+
+.tile p {
+  margin: 0;
+}
+
+.tile.active {
+  background-color: orange;
+}
+
+.title {
+  font-size: medium;
+}
+
+.extraTitle {
+  font-size: small;
+}
+
+.extraValue {
+  font-size: small;
 }
