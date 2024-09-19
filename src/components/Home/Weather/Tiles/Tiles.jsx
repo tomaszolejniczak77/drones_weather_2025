@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./Tiles.module.css";
 import WindIcon from "../WindIcon/WindIcon";
 import AstroInfo from "../AstroInfo/AstroInfo";
+import Kp from "../Kp/Kp";
 
 const Tiles = ({
   tilesData,
-  activeTile,
   setActiveTile,
   setTilesData,
   current,
@@ -63,6 +63,7 @@ const Tiles = ({
         </div>
 
         <AstroInfo astroData={astroData} />
+        <Kp />
       </div>
     </>
   );

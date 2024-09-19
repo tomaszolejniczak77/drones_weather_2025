@@ -5,13 +5,14 @@ import styles from "./Nav.module.css";
 
 const Nav = () => {
   return (
-    <>
-      <nav className={styles.nav}>
+    <div className={styles.nav}>
+      <nav>
         <Link to="/settings">
           <button>{<TfiSettings />}</button>
         </Link>
       </nav>
-    </>
+      <h2>Pogoda do latania dronem</h2>
+    </div>
   );
 };
 

@@ -1,4 +1,4 @@
-.astro {
+.kp {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -8,16 +8,4 @@
   background-color: green;
   border-radius: 10px;
   margin: 0.3rem;
-}
-
-.astro p {
-  margin: 0;
-}
-
-.extraTitle {
-  font-size: small;
-}
-
-.extraValue {
-  font-size: small;
 }

@@ -1,20 +1,23 @@
-.nav {
+.settings {
   display: flex;
   flex-direction: column;
   color: goldenrod;
 }
 
-.nav h2 {
+.settings h1 {
   text-align: center;
-  margin: 0;
 }
 
-.nav nav {
+.settings p {
+  padding: 2rem;
+}
+
+.settings nav {
   display: flex;
   justify-content: flex-end;
 }
 
-.nav button {
+.settings button {
   background-color: green;
   width: 50px;
   margin: 0.5rem;

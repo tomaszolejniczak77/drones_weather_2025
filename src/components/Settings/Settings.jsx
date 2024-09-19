@@ -1,17 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
+import styles from "./Settings.module.css";
 
 const Settings = () => {
   return (
-    <>
-      <h1>Ustawienia</h1>
-      <p>
+    <div className={styles.settings}>
+      <nav>
         <Link to="/">
           <button>{<FaHome />}</button>
         </Link>
-      </p>
-    </>
+      </nav>
+
+      <h1>Ustawienia</h1>
+      <p>W budowie....</p>
+    </div>
   );
 };
 
