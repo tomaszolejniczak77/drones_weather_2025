@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { WeatherContext } from "../../../../context/WeatherContext";
+import { SettingsContext } from "../../../../context/SettingsContext";
 import Tiles from "../Tiles/Tiles";
 
 const TilesData = ({
@@ -11,9 +12,9 @@ const TilesData = ({
 }) => {
   const { weatherData } = useContext(WeatherContext);
 
-  const { current } = weatherData;
+  const { userWindGust } = useContext(SettingsContext);
 
-  // console.log(current);
+  const { current } = weatherData;
 
   const tiles = [
     {
@@ -26,6 +27,7 @@ const TilesData = ({
       extraTitle: "Odczuwalna",
       extraValue: `${current.feelslike_c}`,
       extraUnit: "°C",
+      isNotSafe: current.temp_c < 0 ? true : false,
       isActive: true,
     },
     {
@@ -38,18 +40,20 @@ const TilesData = ({
       extraTitle: "Opady",
       extraValue: `${current.precip_mm}`,
       extraUnit: "mm",
+      isNotSafe: current.precip_mm > 0 ? true : false,
       isActive: false,
     },
     {
       id: 3,
       title: "Wiatr",
-      value: `${current.wind_kph}`,
+      value: `${(current.wind_kph / 3.6).toFixed(1)}`,
       dataName: "wind_kph",
-      unit: "km/h",
+      unit: "m/s",
       isExtended: true,
       extraTitle: "",
-      extraValue: `${((current.wind_kph * 1000) / 3600).toFixed(2)}`,
-      extraUnit: "m/s",
+      extraValue: `${current.wind_kph}`,
+      extraUnit: "km/h",
+      isNotSafe: current.wind_kph > 30 ? true : false,
       isActive: false,
     },
     {
@@ -67,13 +71,14 @@ const TilesData = ({
     {
       id: 5,
       title: "Porywy wiatru",
-      value: `${current.gust_kph}`,
+      value: `${((current.gust_kph * 1000) / 3600).toFixed(1)}`,
       dataName: "gust_kph",
-      unit: "km/h",
+      unit: "m/s",
       isExtended: true,
       extraTitle: "",
-      extraValue: `${((current.gust_kph * 1000) / 3600).toFixed(2)}`,
-      extraUnit: "m/s",
+      extraValue: `${current.gust_kph}`,
+      extraUnit: "km/h",
+      isNotSafe: current.gust_kph / 3.6 > `${userWindGust}` ? true : false,
       isActive: false,
     },
   ];

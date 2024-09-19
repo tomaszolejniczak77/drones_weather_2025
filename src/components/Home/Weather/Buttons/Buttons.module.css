@@ -5,8 +5,7 @@
 }
 
 .buttons button {
-  background-color: green;
-  color: aliceblue;
+  background-color: #00712d;
   padding: 0.5rem;
   width: 100px;
   margin: 0 1rem;
@@ -16,5 +15,5 @@
 }
 
 button.active {
-  background-color: orange;
+  background-color: #ff9100;
 }

@@ -30,7 +30,9 @@ const Tiles = ({
 
         {tilesData.map((item, id) => (
           <div
-            className={`${styles.tile} ${item.isActive ? styles.active : ""}`}
+            className={`${styles.tile} ${
+              item.isNotSafe ? styles.notSafe : ""
+            } ${item.isActive ? styles.active : ""}`}
             key={id}
             onClick={() => handleTileName(item.title)}
           >

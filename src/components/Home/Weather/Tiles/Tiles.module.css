@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* margin: 0.5rem; */
+  /* color: #d5ed9f; */
 }
 
 .tile {
@@ -12,7 +12,7 @@
   align-items: center;
   width: 120px;
   height: 120px;
-  background-color: green;
+  background-color: #00712d;
   border-radius: 10px;
   margin: 0.3rem;
   cursor: pointer;
@@ -25,7 +25,7 @@
   align-items: center;
   width: 120px;
   height: 120px;
-  background-color: green;
+  background-color: #00712d;
   border-radius: 10px;
   margin: 0.3rem;
 }
@@ -39,7 +39,15 @@
 }
 
 .tile.active {
-  background-color: orange;
+  background-color: #ff9100;
+}
+
+.tile.notSafe {
+  background-color: red;
+}
+
+.tile.notSafe.active {
+  background-color: red;
 }
 
 .title {

@@ -20,7 +20,7 @@ const WeatherChart = ({
   tilesData,
   day,
 }) => {
-  const data = [];
+  let data = [];
 
   const activeTileData = tilesData.filter((item) => item.title === activeTile);
 
@@ -31,6 +31,26 @@ const WeatherChart = ({
       unit: `${activeTileData[0]?.unit}`,
     })
   );
+
+  const convertedWindGust = data.map((item) => {
+    return {
+      ...item,
+      "Porywy wiatru": Math.round((item["Porywy wiatru"] / 3.6) * 10) / 10,
+    };
+  });
+
+  const convertedWind = data.map((item) => {
+    return {
+      ...item,
+      Wiatr: Math.round((item["Wiatr"] / 3.6) * 10) / 10,
+    };
+  });
+
+  if (activeTileData[0]?.title === "Porywy wiatru") {
+    data = convertedWindGust;
+  } else if (activeTileData[0]?.title === "Wiatr") {
+    data = convertedWind;
+  }
 
   return (
     <>
@@ -51,7 +71,7 @@ const WeatherChart = ({
               tickCount={6}
               type="number"
               domain={["auto", "auto"]}
-              tickFormatter={(number) => number.toFixed(0)}
+              tickFormatter={(number) => number.toFixed(1)}
             />
             <CartesianGrid opacity={0.1} vertical={false} />
             <Tooltip content={<CustomTooltip />} />

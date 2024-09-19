@@ -4,16 +4,19 @@ import Home from "./components/Home/Home";
 import Settings from "./components/Settings/Settings";
 import { LocationProvider } from "./context/LocationContext";
 import { WeatherProvider } from "./context/WeatherContext";
+import { SettingProvider } from "./context/SettingsContext";
 
 function App() {
   return (
     <>
       <WeatherProvider>
         <LocationProvider>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/settings" element={<Settings />} />
-          </Routes>
+          <SettingProvider>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/settings" element={<Settings />} />
+            </Routes>
+          </SettingProvider>
         </LocationProvider>
       </WeatherProvider>
     </>
