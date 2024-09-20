@@ -103,7 +103,7 @@ const WeatherChart = ({
     if (active) {
       return (
         <div className={styles.tooltip}>
-          {payload[0].value} {payload[0].payload.unit}
+          {payload[0]?.value} {payload[0]?.payload.unit}
         </div>
       );
     }
