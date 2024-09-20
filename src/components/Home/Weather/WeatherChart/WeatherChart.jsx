@@ -46,9 +46,9 @@ const WeatherChart = ({
     };
   });
 
-  if (activeTileData[0]?.title === "Porywy wiatru") {
+  if (activeTile === "Porywy wiatru") {
     data = convertedWindGust;
-  } else if (activeTileData[0]?.title === "Wiatr") {
+  } else if (activeTile === "Wiatr") {
     data = convertedWind;
   }
 
@@ -71,7 +71,11 @@ const WeatherChart = ({
               tickCount={6}
               type="number"
               domain={["auto", "auto"]}
-              tickFormatter={(number) => number.toFixed(1)}
+              tickFormatter={(number) =>
+                activeTile === "Porywy wiatru" || activeTile === "Wiatr"
+                  ? number.toFixed(1)
+                  : number.toFixed(0)
+              }
             />
             <CartesianGrid opacity={0.1} vertical={false} />
             <Tooltip content={<CustomTooltip />} />

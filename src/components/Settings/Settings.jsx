@@ -18,7 +18,6 @@ const Settings = () => {
 
   function handleInput(e) {
     setUserWindGust(e.target.value);
-    console.log(e.target.value);
   }
 
   return (
