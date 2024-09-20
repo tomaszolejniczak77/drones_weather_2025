@@ -5,7 +5,8 @@
 }
 
 .buttons button {
-  background-color: #00712d;
+  background-color: #16423c;
+  color: #e9efec;
   padding: 0.5rem;
   width: 100px;
   margin: 0 1rem;
@@ -15,5 +16,5 @@
 }
 
 button.active {
-  background-color: #ff9100;
+  background-color: #6a9c89;
 }
