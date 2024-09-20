@@ -1,20 +1,15 @@
-.nav {
+.info {
   display: flex;
   flex-direction: column;
   color: goldenrod;
 }
 
-.nav h2 {
-  text-align: center;
-  margin: 0;
-}
-
-.nav nav {
+.info nav {
   display: flex;
   justify-content: flex-end;
 }
 
-.nav button {
+.info button {
   background-color: #16423c;
   color: #e9efec;
   width: 50px;
@@ -23,4 +18,19 @@
   cursor: pointer;
   border: none;
   border-radius: 5px;
+}
+
+.info h1 {
+  text-align: center;
+}
+
+.info ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0 3rem;
+}
+
+.info li {
+  color: #e9efec;
+  padding: 0.5rem;
 }

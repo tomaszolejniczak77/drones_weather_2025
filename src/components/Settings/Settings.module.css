@@ -18,7 +18,8 @@
 }
 
 .settings button {
-  background-color: green;
+  background-color: #16423c;
+  color: #e9efec;
   width: 50px;
   margin: 0.5rem;
   padding: 0.5rem;
