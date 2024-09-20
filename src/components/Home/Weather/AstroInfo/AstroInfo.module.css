@@ -21,3 +21,14 @@
 .extraValue {
   font-size: small;
 }
+
+@media (max-width: 380px) {
+  .astro {
+    width: 110px;
+    height: 110px;
+  }
+
+  .astro p {
+    text-align: center;
+  }
+}

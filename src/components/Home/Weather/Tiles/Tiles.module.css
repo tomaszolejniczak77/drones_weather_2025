@@ -61,3 +61,15 @@
 .extraValue {
   font-size: small;
 }
+
+@media (max-width: 380px) {
+  .tile,
+  .icon {
+    width: 110px;
+    height: 110px;
+  }
+
+  .icon p {
+    text-align: center;
+  }
+}

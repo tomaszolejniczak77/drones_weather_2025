@@ -9,3 +9,10 @@
   border-radius: 10px;
   margin: 0.3rem;
 }
+
+@media (max-width: 380px) {
+  .kp {
+    width: 110px;
+    height: 110px;
+  }
+}
