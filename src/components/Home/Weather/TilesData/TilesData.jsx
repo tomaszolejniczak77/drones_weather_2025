@@ -84,8 +84,13 @@ const TilesData = ({
   ];
 
   useEffect(() => {
-    setTilesData(tiles);
-  }, [current]);
+    const updatedTilesdata = tiles.map((item) =>
+      item.title === activeTile
+        ? { ...item, isActive: true }
+        : { ...item, isActive: false }
+    );
+    setTilesData(updatedTilesdata);
+  }, [current, activeTile]);
 
   return (
     <>

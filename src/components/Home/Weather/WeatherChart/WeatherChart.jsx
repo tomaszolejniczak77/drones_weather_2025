@@ -19,6 +19,7 @@ const WeatherChart = ({
   chosenDayForecast,
   tilesData,
   day,
+  setActiveTile,
 }) => {
   let data = [];
 

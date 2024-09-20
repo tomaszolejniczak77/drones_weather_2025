@@ -19,37 +19,38 @@ const Info = () => {
       <ul>
         <li>Dane pogodowe pobierane są na podstawie lokalizacji.</li>
         <li>
-          Jeśli chcesz zobaczyć dane dla innej lokalizacji, to należy
-          przeciągnąc ikonę położenia na mapie w oczekiwane miejsce.
+          Jeśli chcesz zobaczyć dane dla innej lokalizacji, należy przeciągnąć
+          ikonę położenia na mapie w oczekiwane miejsce.
         </li>
         <li>
           Kafelki poniżej mapy pokazują dane pogodowe dla aktualnej godziny.
         </li>
         <li>
-          5 kafelków służy do przełączania danych prezentowanych na wykresie, a
+          5 kafelków służy do przełączania danych prezentowanych na wykresie;
           domyślnie jest to temperatura.
         </li>
         <li>
-          Po wybraniu odpowiedniego kafelka zmienia on kolor, a wykres
-          prezentuje wybrane dane dla całej doby wskzanego dnia.
+          Po wybraniu odpowiedniego kafelka, zmienia on kolor, a wykres
+          prezentuje wybrane dane dla doby wskazanego dnia.
         </li>
         <li>
-          Przyciskami pod wykresem możesz akywować dane dla kolejnych dni.
+          Przyciskami pod wykresem możesz aktywować dane dla kolejnych dni.
         </li>
         <li>
-          Przemieszczając się po wykresie możesz zobaczyć dane dla każdej
+          Przemieszczając się po wykresie, możesz zobaczyć dane dla każdej
           godziny.
         </li>
         <li>
-          Klikając na ikonę ustawień masz możliwość wybrania odpowiedniego dla
-          Twojego drona poziomu siły maksymalnego bezpieczego wiatru w m/s.
+          Klikając na ikonę ustawień, masz możliwość wybrania odpowiedniego dla
+          Twojego drona poziomu maksymalnej bezpiecznej siły wiatru w m/s.
         </li>
         <li>
-          Domyślnie ostrzeganie ustawione jest dla wiatru powyżej 8 m/s i wtedy
-          kafelek z informacją o porywach wiatru zmieni kolor na czerwony.
+          Domyślnie ostrzeganie ustawione jest dla wiatru powyżej 8 m/s, wtedy
+          kafelek z informacją o porywach wiatru zmienia kolor na czerwony.
         </li>
         <li>
-          Dane o odporności na wiatr Twojegp drona znajdziesz w specyfikacji
+          Dane o odporności na wiatr Twojego drona znajdziesz w jego
+          specyfikacji.
         </li>
       </ul>
     </div>

@@ -44,6 +44,7 @@ const Weather = () => {
           tilesData={tilesData}
           chosenDayForecast={chosenDayForecast}
           day={day}
+          setActiveTile={setActiveTile}
         />
       )}
       <Buttons setDay={setDay} />

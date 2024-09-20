@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Tiles.module.css";
 import WindIcon from "../WindIcon/WindIcon";
 import AstroInfo from "../AstroInfo/AstroInfo";
@@ -10,16 +10,19 @@ const Tiles = ({
   setTilesData,
   current,
   astroData,
+  activeTile,
 }) => {
   function handleTileName(name) {
+    // const updatedTilesdata = tilesData.map((item) =>
+    //   item.title === name
+    //     ? { ...item, isActive: true }
+    //     : { ...item, isActive: false }
+    // );
+    // setTilesData(updatedTilesdata);
     setActiveTile(name);
-    const updatedTilesdata = tilesData.map((item) =>
-      item.title === name
-        ? { ...item, isActive: true }
-        : { ...item, isActive: false }
-    );
-    setTilesData(updatedTilesdata);
   }
+
+  // console.log(activeTile);
 
   return (
     <>
