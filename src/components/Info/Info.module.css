@@ -28,7 +28,7 @@
 .info ul {
   display: flex;
   flex-direction: column;
-  padding: 0 3rem;
+  padding: 0 1rem;
 }
 
 .info li {
