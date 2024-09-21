@@ -12,7 +12,7 @@
   align-items: center;
   width: 115px;
   height: 115px;
-  background-color: #16423c;
+  background-color: #16325b;
   color: #e9efec;
   border-radius: 10px;
   margin: 0.3rem;
@@ -27,7 +27,7 @@
   align-items: center;
   width: 115px;
   height: 115px;
-  background-color: #16423c;
+  background-color: #16325b;
   color: #e9efec;
   border-radius: 10px;
   margin: 0.3rem;
@@ -42,7 +42,7 @@
 }
 
 .tile.active {
-  background-color: #6a9c89;
+  background-color: #227b94;
 }
 
 .tile.notSafe {
