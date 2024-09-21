@@ -13,16 +13,8 @@ const Tiles = ({
   activeTile,
 }) => {
   function handleTileName(name) {
-    // const updatedTilesdata = tilesData.map((item) =>
-    //   item.title === name
-    //     ? { ...item, isActive: true }
-    //     : { ...item, isActive: false }
-    // );
-    // setTilesData(updatedTilesdata);
     setActiveTile(name);
   }
-
-  // console.log(activeTile);
 
   return (
     <>

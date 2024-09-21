@@ -5,7 +5,7 @@ const Buttons = ({ setDay }) => {
   const dayNumber = new Date().getDay();
 
   function handleDayName(day) {
-    if (day > 6) {
+    if (day === 7) {
       day = 0;
     } else if (day === 8) {
       day = 1;
@@ -15,7 +15,7 @@ const Buttons = ({ setDay }) => {
       case 0:
         return "Niedziela";
       case 1:
-        return "Ponidziałek";
+        return "Poniedziałek";
       case 2:
         return "Wtorek";
       case 3:
