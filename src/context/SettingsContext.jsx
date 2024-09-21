@@ -8,12 +8,28 @@ export const SettingProvider = ({ children }) => {
     return savedValue !== null ? JSON.parse(savedValue) : 8;
   });
 
+  const [userTemperature, setUserTemperature] = useState(() => {
+    const savedValue = localStorage.getItem("userTemperature");
+    return savedValue !== null ? JSON.parse(savedValue) : 0;
+  });
+
   useEffect(() => {
     localStorage.setItem("userWindGust", JSON.stringify(userWindGust));
   }, [userWindGust]);
 
+  useEffect(() => {
+    localStorage.setItem("userTemperature", JSON.stringify(userTemperature));
+  }, [userTemperature]);
+
   return (
-    <SettingsContext.Provider value={{ userWindGust, setUserWindGust }}>
+    <SettingsContext.Provider
+      value={{
+        userWindGust,
+        setUserWindGust,
+        userTemperature,
+        setUserTemperature,
+      }}
+    >
       {children}
     </SettingsContext.Provider>
   );

@@ -12,7 +12,7 @@ const TilesData = ({
 }) => {
   const { weatherData } = useContext(WeatherContext);
 
-  const { userWindGust } = useContext(SettingsContext);
+  const { userWindGust, userTemperature } = useContext(SettingsContext);
 
   const { current } = weatherData;
 
@@ -27,7 +27,7 @@ const TilesData = ({
       extraTitle: "Odczuwalna",
       extraValue: `${current.feelslike_c}`,
       extraUnit: "°C",
-      isNotSafe: current.temp_c < 0 ? true : false,
+      isNotSafe: current.temp_c < `${userTemperature}` ? true : false,
       isActive: true,
     },
     {
