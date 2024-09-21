@@ -80,7 +80,7 @@ const WeatherChart = ({
             />
             <CartesianGrid opacity={0.1} vertical={false} />
             <Tooltip content={<CustomTooltip />} />
-            {day === 0 && <ReferenceLine x={hourNow} stroke="darkgreen" />}
+            {day === 0 && <ReferenceLine x={hourNow} stroke="#76dbd1" />}
             <Legend
               align="right"
               verticalAlign="top"
