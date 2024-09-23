@@ -4,8 +4,17 @@ import { TfiSettings } from "react-icons/tfi";
 import { FaCircleInfo } from "react-icons/fa6";
 import styles from "./Nav.module.css";
 import LanguageSelector from "../../LanguageSelector/LanguageSelector";
+import { useContext } from "react";
+import { LanguageContext } from "../../../context/LanguageContext";
 
 const Nav = () => {
+  const { language } = useContext(LanguageContext);
+
+  const translations = {
+    pl: { title: "Pogoda do latania dronem" },
+    eng: { title: "Weather for flying a drone" },
+  };
+
   return (
     <div className={styles.nav}>
       <nav>
@@ -23,7 +32,7 @@ const Nav = () => {
           </Link>
         </div>
       </nav>
-      <h2>Pogoda do latania dronem</h2>
+      <h2>{translations[language].title}</h2>
     </div>
   );
 };

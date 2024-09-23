@@ -7,4 +7,5 @@
 
 .flags img {
   margin: 0.5rem;
+  cursor: pointer;
 }

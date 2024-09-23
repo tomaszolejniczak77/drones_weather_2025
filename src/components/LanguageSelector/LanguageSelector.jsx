@@ -6,13 +6,11 @@ import { useContext } from "react";
 import { LanguageContext } from "../../context/LanguageContext";
 
 const LanguageSelector = () => {
-  const { setLanguage, language } = useContext(LanguageContext);
+  const { setLanguage } = useContext(LanguageContext);
 
   function handleValue(e) {
     setLanguage(e.target.dataset.value);
   }
-
-  console.log(language);
 
   return (
     <div className={styles.flags}>
