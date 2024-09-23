@@ -3,6 +3,7 @@ import styles from "./Tiles.module.css";
 import WindIcon from "../WindIcon/WindIcon";
 import AstroInfo from "../AstroInfo/AstroInfo";
 import Kp from "../Kp/Kp";
+import WeatherIcon from "../WeatherIcon/WeatherIcon";
 
 const Tiles = ({
   tilesData,
@@ -20,7 +21,8 @@ const Tiles = ({
     <>
       <div className={styles.tiles}>
         <div className={styles.icon}>
-          <img src={current.condition.icon} alt="Weather Icon" />
+          {/* <img src={current.condition.icon} alt="Weather Icon" /> */}
+          <WeatherIcon current={current} />
         </div>
 
         {tilesData.map((item, id) => (
