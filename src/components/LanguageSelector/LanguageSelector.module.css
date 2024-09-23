@@ -1,0 +1,10 @@
+.flags {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flags img {
+  margin: 0.5rem;
+}

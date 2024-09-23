@@ -6,6 +6,7 @@ import Info from "./components/Info/Info";
 import { LocationProvider } from "./context/LocationContext";
 import { WeatherProvider } from "./context/WeatherContext";
 import { SettingProvider } from "./context/SettingsContext";
+import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
   return (
@@ -13,11 +14,13 @@ function App() {
       <WeatherProvider>
         <LocationProvider>
           <SettingProvider>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/info" element={<Info />} />
-              <Route path="/settings" element={<Settings />} />
-            </Routes>
+            <LanguageProvider>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/info" element={<Info />} />
+                <Route path="/settings" element={<Settings />} />
+              </Routes>
+            </LanguageProvider>
           </SettingProvider>
         </LocationProvider>
       </WeatherProvider>
