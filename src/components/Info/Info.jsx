@@ -52,7 +52,7 @@ const Info = () => {
             kolor na czerwony.
           </li>
           <li>
-            Dane o odporności na wiatr i temperaturę drona znajdziesz w jego
+            Dane o odporności drona na wiatr i temperaturę, znajdziesz w jego
             specyfikacji.
           </li>
         </ul>
