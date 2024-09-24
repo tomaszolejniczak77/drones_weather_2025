@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import styles from "./Buttons.module.css";
+import { useContext } from "react";
+import { LanguageContext } from "../../../../context/LanguageContext";
 
 const Buttons = ({ setDay }) => {
   const dayNumber = new Date().getDay();
+
+  const { language } = useContext(LanguageContext);
+
+  const translate = { dayName: { 0: "Dziś", 1: "Today" } };
 
   function handleDayName(day) {
     if (day === 7) {
@@ -13,21 +19,23 @@ const Buttons = ({ setDay }) => {
 
     switch (day) {
       case 0:
-        return "Niedziela";
+        return ["Niedziela", "Sunday"];
       case 1:
-        return "Poniedziałek";
+        return ["Poniedziałek", "Monday"];
       case 2:
-        return "Wtorek";
+        return ["Wtorek", "Tuesday"];
       case 3:
-        return "Środa";
+        return ["Środa", "Wednesday"];
       case 4:
-        return "Czwartek";
+        return ["Czwartek", "Thursday"];
       case 5:
-        return "Piątek";
+        return ["Piątek", "Friday"];
       case 6:
-        return "Sobota";
+        return ["Sobota", "Saturday"];
     }
   }
+
+  console.log(language);
 
   const buttonsData = [
     { id: 0, name: (day) => handleDayName(day), isActive: true },
@@ -57,7 +65,9 @@ const Buttons = ({ setDay }) => {
             value={item.id}
             onClick={handleDay}
           >
-            {item.id === 0 ? "Dziś" : item.name(dayNumber)}
+            {item.id === 0
+              ? translate.dayName[language]
+              : item.name(dayNumber)[language]}
           </button>
         ))}
       </div>
