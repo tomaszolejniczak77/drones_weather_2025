@@ -11,6 +11,9 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+import { useContext } from "react";
+import { LanguageContext } from "../../../../context/LanguageContext";
+
 import styles from "./WeatherChart.module.css";
 
 const WeatherChart = ({
@@ -23,33 +26,39 @@ const WeatherChart = ({
 }) => {
   let data = [];
 
-  const activeTileData = tilesData.filter((item) => item.title === activeTile);
+  const { language } = useContext(LanguageContext);
+
+  const activeTileData = tilesData.filter(
+    (item) => item.title[language] === activeTile
+  );
+
+  // console.log(activeTile);
 
   chosenDayForecast.map((item) =>
     data.push({
       name: `${item.time.slice(11, 13)}`,
-      [`${activeTileData[0]?.title}`]: item[activeTileData[0]?.dataName],
+      [activeTileData[0]?.title[language]]: item[activeTileData[0]?.dataName],
       unit: `${activeTileData[0]?.unit}`,
     })
   );
 
-  const convertedWindGust = data.map((item) => {
-    return {
-      ...item,
-      "Porywy wiatru": Math.round((item["Porywy wiatru"] / 3.6) * 10) / 10,
-    };
-  });
-
   const convertedWind = data.map((item) => {
     return {
       ...item,
-      Wiatr: Math.round((item["Wiatr"] / 3.6) * 10) / 10,
+      [activeTile]: Math.round((item[activeTile] / 3.6) * 10) / 10,
     };
   });
 
-  if (activeTile === "Porywy wiatru") {
+  const convertedWindGust = data.map((item) => {
+    return {
+      ...item,
+      [activeTile]: Math.round((item[activeTile] / 3.6) * 10) / 10,
+    };
+  });
+
+  if (activeTile === "Porywy wiatru" || activeTile === "Wind gusts") {
     data = convertedWindGust;
-  } else if (activeTile === "Wiatr") {
+  } else if (activeTile === "Wiatr" || activeTile === "Wind") {
     data = convertedWind;
   }
 

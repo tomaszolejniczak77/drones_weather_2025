@@ -16,7 +16,7 @@ const LanguageSelector = () => {
     <div className={styles.flags}>
       <img
         onClick={handleValue}
-        data-value={"pl"}
+        data-value={0}
         src={plFlag}
         alt="Polish"
         width="50"
@@ -24,7 +24,7 @@ const LanguageSelector = () => {
       />
       <img
         onClick={handleValue}
-        data-value={"eng"}
+        data-value={1}
         src={gbFlag}
         alt="English"
         width="50"

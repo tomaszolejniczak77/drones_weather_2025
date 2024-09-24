@@ -11,8 +11,8 @@ const Nav = () => {
   const { language } = useContext(LanguageContext);
 
   const translations = {
-    pl: { title: "Pogoda do latania dronem" },
-    eng: { title: "Weather for flying a drone" },
+    0: { title: "Pogoda do latania dronem" },
+    1: { title: "Weather for flying a drone" },
   };
 
   return (

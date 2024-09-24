@@ -8,9 +8,9 @@ import TilesData from "./TilesData/TilesData";
 
 const Weather = () => {
   const { weatherData } = useContext(WeatherContext);
+
   const [tilesData, setTilesData] = useState([]);
   const [activeTile, setActiveTile] = useState("Temperatura");
-
   const [day, setDay] = useState(0);
 
   if (!weatherData) {

@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import styles from "./Tiles.module.css";
 import WindIcon from "../WindIcon/WindIcon";
 import AstroInfo from "../AstroInfo/AstroInfo";
 import Kp from "../Kp/Kp";
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
+import { LanguageContext } from "../../../../context/LanguageContext";
 
 const Tiles = ({
   tilesData,
@@ -13,9 +14,11 @@ const Tiles = ({
   astroData,
   activeTile,
 }) => {
-  function handleTileName(name) {
-    setActiveTile(name);
-  }
+  const { language } = useContext(LanguageContext);
+
+  const translation = {
+    direction: { 0: "Kierunek wiatru", 1: "Wind dir" },
+  };
 
   return (
     <>
@@ -31,22 +34,22 @@ const Tiles = ({
               item.isNotSafe ? styles.notSafe : ""
             } ${item.isActive ? styles.active : ""}`}
             key={id}
-            onClick={() => handleTileName(item.title)}
+            onClick={() => setActiveTile(item.title[language])}
           >
             {item.isExtended ? (
               <>
-                <p className={styles.title}>{item.title}</p>
+                <p className={styles.title}>{item.title[language]}</p>
                 <p>
                   {item.value} {item.unit}
                 </p>
-                <p className={styles.extraTitle}>{item.extraTitle}</p>
+                <p className={styles.extraTitle}>{item.extraTitle[language]}</p>
                 <p className={styles.extraValue}>
                   {item.extraValue} {item.extraUnit}
                 </p>
               </>
             ) : (
               <>
-                <p className={styles.title}>{item.title}</p>
+                <p className={styles.title}>{item.title[language]}</p>
                 <p>
                   {item.value} {item.unit}
                 </p>
@@ -56,7 +59,7 @@ const Tiles = ({
         ))}
 
         <div className={styles.icon}>
-          <p>Kierunek wiatru</p>
+          <p>{translation.direction[language]}</p>
           <WindIcon current={current} />
           <p className={styles.extraValue}>{current.wind_dir}</p>
         </div>
