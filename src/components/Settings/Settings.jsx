@@ -4,6 +4,7 @@ import { FaHome } from "react-icons/fa";
 import styles from "./Settings.module.css";
 import { useContext } from "react";
 import { SettingsContext } from "../../context/SettingsContext";
+import { LanguageContext } from "../../context/LanguageContext";
 import { useNavigate } from "react-router-dom";
 
 const Settings = () => {
@@ -11,6 +12,21 @@ const Settings = () => {
     useContext(SettingsContext);
 
   const navigation = useNavigate();
+
+  const { language } = useContext(LanguageContext);
+
+  const translation = {
+    title: { 0: "Ustawienia", 1: "Settings" },
+    windGust: {
+      0: "Ustaw próg ostrzegania dla porywów wiatru m/s",
+      1: "Set the warning level for wind gusts in m/s",
+    },
+    minTemp: {
+      0: "Ustaw próg ostrzegania dla minimalnej temperatury otoczenia",
+      1: "Set the warning level for the minimum ambient temperature",
+    },
+    button: { 0: "Ustaw", 1: "Set" },
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -33,10 +49,10 @@ const Settings = () => {
         </Link>
       </nav>
 
-      <h1>Ustawienia</h1>
+      <h1>{translation.title[language]}</h1>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div className={styles.gust}>
-          <label>Ustaw próg ostrzegania dla porywów wiatru m/s</label>
+          <label>{translation.windGust[language]}</label>
           <div className={styles.inside}>
             <input
               value={userWindGust}
@@ -44,14 +60,12 @@ const Settings = () => {
               type="number"
               id="windGust"
             />
-            <button type="submit">Ustaw</button>
+            <button type="submit">{translation.button[language]}</button>
           </div>
         </div>
 
         <div className={styles.temperature}>
-          <label>
-            Ustaw próg ostrzegania dla minimalnej temperatury otoczenia
-          </label>
+          <label>{translation.minTemp[language]}</label>
           <div className={styles.inside}>
             <input
               value={userTemperature}
@@ -59,7 +73,7 @@ const Settings = () => {
               type="number"
               id="temperature"
             />
-            <button type="submit">Ustaw</button>
+            <button type="submit">{translation.button[language]}</button>
           </div>
         </div>
       </form>

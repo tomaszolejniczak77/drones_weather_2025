@@ -35,8 +35,6 @@ const Buttons = ({ setDay }) => {
     }
   }
 
-  console.log(language);
-
   const buttonsData = [
     { id: 0, name: (day) => handleDayName(day), isActive: true },
     { id: 1, name: (day) => handleDayName(day + 1), isActive: false },

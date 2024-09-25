@@ -1,0 +1,42 @@
+{
+  "line1": {
+    "0": "Dane pogodowe pobierane są na podstawie lokalizacji.",
+    "1": "Weather data is fetched based on your location."
+  },
+  "line2": {
+    "0": "Jeśli chcesz zobaczyć dane dla innej lokalizacji, należy przeciągnąć ikonę położenia na mapie w oczekiwane miejsce.",
+    "1": "If you want to view data for a different location, drag the location icon on the map to the desired spot."
+  },
+  "line3": {
+    "0": "Kafelki poniżej mapy pokazują dane pogodowe dla aktualnej godziny.",
+    "1": "The tiles below the map display weather data for the current hour."
+  },
+  "line4": {
+    "0": "5 kafelków służy do przełączania danych prezentowanych na wykresie; domyślnie jest to temperatura.",
+    "1": "5 tiles allow you to switch the data presented on the chart; by default, it shows temperature."
+  },
+  "line5": {
+    "0": "Po wybraniu odpowiedniego kafelka, zmienia on kolor, a wykres prezentuje wybrane dane dla doby wskazanego dnia.",
+    "1": "After selecting the appropriate tile, it changes color, and the chart displays the selected data for the entire day."
+  },
+  "line6": {
+    "0": "Przyciskami pod wykresem możesz aktywować dane dla kolejnych dni.",
+    "1": "Use the buttons below the chart to activate data for subsequent days."
+  },
+  "line7": {
+    "0": "Przemieszczając się po wykresie, możesz zobaczyć dane dla każdej godziny.",
+    "1": "Moving along the chart allows you to view the data for each hour."
+  },
+  "line8": {
+    "0": "Klikając na ikonę ustawień, masz możliwość wybrania odpowiedniego dla Twojego drona poziomu maksymalnej bezpiecznej siły wiatru w m/s oraz minimalnej bezpiecznej temperatury otoczenia w °C.",
+    "1": "By clicking on the settings icon, you can select the maximum safe wind speed (in m/s) and the minimum ambient temperature (in °C) suitable for your drone."
+  },
+  "line9": {
+    "0": "Domyślnie ostrzeganie ustawione jest dla wiatru powyżej 8 m/s i temperatury poniżej 0°C; wtedy dany kafelek z informacją zmienia kolor na czerwony.",
+    "1": "By default, warnings are set for wind speeds above 8 m/s and temperatures below 0°C; in such cases, the relevant tile will change color to red."
+  },
+  "line10": {
+    "0": "Dane o odporności drona na wiatr i temperaturę, znajdziesz w jego specyfikacji.",
+    "1": "You can find information about your drone's wind and temperature tolerance in its specifications."
+  }
+}

@@ -25,14 +25,9 @@
   margin: 0;
 }
 
-.info ul {
-  display: flex;
-  flex-direction: column;
-  padding: 0 1rem;
-}
-
 .info li {
   color: #76dbd1;
-  /* color: #00ffc6; */
   padding: 0.5rem;
+  text-align: justify;
+  margin-right: 1.5rem;
 }
