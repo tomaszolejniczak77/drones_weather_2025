@@ -3,7 +3,7 @@ import { WeatherContext } from "../../../context/WeatherContext";
 import { useContext, useEffect } from "react";
 
 const GetWeather = ({ position }) => {
-  const { setWeatherData } = useContext(WeatherContext);
+  const { setWeatherData, setWeatherError } = useContext(WeatherContext);
 
   const { latitude, longitude } = position;
 
@@ -26,7 +26,8 @@ const GetWeather = ({ position }) => {
         const response = await axios.request(options);
         setWeatherData(response.data);
       } catch (error) {
-        console.error(error);
+        console.error(error.message);
+        setWeatherError(error.message);
       }
     };
 

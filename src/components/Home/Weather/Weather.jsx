@@ -7,11 +7,15 @@ import Buttons from "./Buttons/Buttons";
 import TilesData from "./TilesData/TilesData";
 
 const Weather = () => {
-  const { weatherData } = useContext(WeatherContext);
+  const { weatherData, weatherError } = useContext(WeatherContext);
 
   const [tilesData, setTilesData] = useState([]);
   const [activeTile, setActiveTile] = useState("Temperatura");
   const [day, setDay] = useState(0);
+
+  if (weatherError) {
+    return <p className={styles.fetchingWeather}>{weatherError}</p>;
+  }
 
   if (!weatherData) {
     return <p className={styles.fetchingWeather}>Pobieranie pogody...</p>;
