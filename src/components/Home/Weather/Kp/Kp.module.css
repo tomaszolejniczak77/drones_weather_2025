@@ -11,6 +11,10 @@
   margin: 0.3rem;
 }
 
+.kp.notSafe {
+  background-color: red;
+}
+
 @media (max-width: 380px) {
   .kp {
     width: 110px;

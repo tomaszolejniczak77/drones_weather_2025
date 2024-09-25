@@ -25,7 +25,7 @@ const Kp = () => {
   }, []);
 
   return (
-    <div className={styles.kp}>
+    <div className={`${styles.kp} ${kp > 4 ? styles.notSafe : ""}`}>
       <p>Kp</p>
       {!error ? <p>{kp}</p> : <p>{error}</p>}
     </div>
