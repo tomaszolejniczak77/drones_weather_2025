@@ -28,6 +28,6 @@
 .info li {
   color: #76dbd1;
   padding: 0.5rem;
-  text-align: justify;
-  margin-right: 1.5rem;
+  /* text-align: justify; */
+  margin-right: 2rem;
 }

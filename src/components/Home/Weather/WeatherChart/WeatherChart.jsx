@@ -78,9 +78,14 @@ const WeatherChart = ({
             </defs>
             <XAxis dataKey="name" />
             <YAxis
-              tickCount={6}
+              tickCount={7}
               type="number"
-              domain={["auto", "auto"]}
+              // domain={["auto", "auto"]}
+              domain={
+                activeTile === "Zachmurzenie"
+                  ? ["dataMin", "dataMax"]
+                  : ["dataMin", "dataMax + 1"]
+              }
               tickFormatter={(number) =>
                 activeTile === "Porywy wiatru" || activeTile === "Wiatr"
                   ? number.toFixed(1)
