@@ -10,6 +10,7 @@ const Footer = () => {
           WeatherAPI.com
         </a>
       </p>
+      <p>® Tomasz Olejniczak {new Date().getFullYear()}</p>
     </div>
   );
 };
