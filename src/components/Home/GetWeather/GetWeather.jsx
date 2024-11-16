@@ -17,7 +17,7 @@ const GetWeather = ({ position }) => {
     const fetchData = async () => {
       const options = {
         method: "GET",
-        url: `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${q}&days=3&aqi=no&alerts=no`,
+        url: `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${q}&days=3&aqi=no&alerts=no`,
         // params: {
         //   q: `${latitude.toFixed(2)}, ${longitude.toFixed(2)}`,
         //   days: 3,
