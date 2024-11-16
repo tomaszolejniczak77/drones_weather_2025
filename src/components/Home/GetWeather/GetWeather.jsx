@@ -7,19 +7,25 @@ const GetWeather = ({ position }) => {
 
   const { latitude, longitude } = position;
 
+  const apiKey = import.meta.env.REACT_APP_MY_KEY;
+
+  const q = `${latitude.toFixed(2)}, ${longitude.toFixed(2)}`;
+
+  console.log(q);
+
   useEffect(() => {
     const fetchData = async () => {
       const options = {
         method: "GET",
-        url: "https://weatherapi-com.p.rapidapi.com/forecast.json",
-        params: {
-          q: `${latitude.toFixed(2)}, ${longitude.toFixed(2)}`,
-          days: 3,
-        },
-        headers: {
-          "x-rapidapi-key": import.meta.env.REACT_APP_MY_KEY,
-          "x-rapidapi-host": "weatherapi-com.p.rapidapi.com",
-        },
+        url: `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${q}&days=3&aqi=no&alerts=no`,
+        // params: {
+        //   q: `${latitude.toFixed(2)}, ${longitude.toFixed(2)}`,
+        //   days: 3,
+        // },
+        // headers: {
+        //   "x-rapidapi-key": import.meta.env.REACT_APP_MY_KEY,
+        //   "x-rapidapi-host": "weatherapi.com/v1/forecast.json",
+        // },
       };
 
       try {

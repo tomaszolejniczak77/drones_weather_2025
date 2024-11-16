@@ -9,6 +9,8 @@ import TilesData from "./TilesData/TilesData";
 const Weather = () => {
   const { weatherData, weatherError } = useContext(WeatherContext);
 
+  // console.log(weatherData);
+
   const [tilesData, setTilesData] = useState([]);
   const [activeTile, setActiveTile] = useState("Temperatura");
   const [day, setDay] = useState(0);
@@ -24,6 +26,8 @@ const Weather = () => {
   const { location, current, forecast } = weatherData;
 
   const { forecastday } = forecast;
+
+  console.log(forecastday);
 
   const chosenDayForecast = forecastday[day].hour;
 
