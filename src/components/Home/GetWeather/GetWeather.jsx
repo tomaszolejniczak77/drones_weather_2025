@@ -7,24 +7,24 @@ const GetWeather = ({ position }) => {
 
   const { latitude, longitude } = position;
 
-  const apiKey = import.meta.env.REACT_APP_MY_KEY;
+  // const apiKey = import.meta.env.REACT_APP_MY_KEY;
 
-  const q = `${latitude.toFixed(2)}, ${longitude.toFixed(2)}`;
-
-  console.log(q);
+  // const q = `${latitude.toFixed(2)}, ${longitude.toFixed(2)}`;
 
   useEffect(() => {
     const fetchData = async () => {
       const options = {
         method: "GET",
-        url: `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${q}&days=3&aqi=no&alerts=no`,
-        // params: {
-        //   q: `${latitude.toFixed(2)}, ${longitude.toFixed(2)}`,
-        //   days: 3,
-        // },
+        url: `https://api.weatherapi.com/v1/forecast.json?key=${
+          import.meta.env.REACT_APP_MY_KEY
+        }`,
+        params: {
+          q: `${latitude.toFixed(2)}, ${longitude.toFixed(2)}`,
+          days: 3,
+        },
         // headers: {
         //   "x-rapidapi-key": import.meta.env.REACT_APP_MY_KEY,
-        //   "x-rapidapi-host": "weatherapi.com/v1/forecast.json",
+        //   "x-rapidapi-host": "api.weatherapi.com/v1/forecast.json",
         // },
       };
 
