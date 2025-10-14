@@ -7,8 +7,6 @@ const GetWeather = ({ position }) => {
 
   const { latitude, longitude } = position;
 
-  // const apiKey = import.meta.env.REACT_APP_MY_KEY;
-
   // const q = `${latitude.toFixed(2)}, ${longitude.toFixed(2)}`;
 
   useEffect(() => {

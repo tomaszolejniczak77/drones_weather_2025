@@ -27,7 +27,7 @@ const Weather = () => {
 
   const { forecastday } = forecast;
 
-  console.log(forecastday);
+  // console.log(forecastday);
 
   const chosenDayForecast = forecastday[day].hour;
 
