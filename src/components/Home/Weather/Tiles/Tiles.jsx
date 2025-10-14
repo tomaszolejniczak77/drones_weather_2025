@@ -17,7 +17,7 @@ const Tiles = ({
   const { language } = useContext(LanguageContext);
 
   const translation = {
-    direction: { 0: "Kierunek wiatru", 1: "Wind dir" },
+    direction: { 0: "Kierunek\nwiatru", 1: "Wind dir" },
   };
 
   return (

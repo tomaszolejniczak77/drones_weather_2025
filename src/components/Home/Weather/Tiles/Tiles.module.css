@@ -2,7 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center; /*nowość*/
   /* color: #d5ed9f; */
 }
 
@@ -40,6 +39,8 @@
 
 .tile p {
   margin: 0;
+  text-align: center;
+  white-space: nowrap; /* <-- blokuje zawijanie tekstu */
 }
 
 .tile.active {
