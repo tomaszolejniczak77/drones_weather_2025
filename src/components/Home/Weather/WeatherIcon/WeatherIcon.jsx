@@ -6,10 +6,20 @@ const WeatherIcon = ({ current }) => {
   const [icon, setIcon] = useState("");
 
   const currentWeatherCode = current.condition.code;
-  const filteredData = data.filter((item) => item.code === currentWeatherCode);
-  const iconCode = filteredData[0].icon;
+  const condition = data.find(
+    (item) => Number(item.code) === Number(currentWeatherCode)
+  );
+  const iconCode = condition?.icon;
+  const apiIcon = current.condition.icon?.startsWith("//")
+    ? `https:${current.condition.icon}`
+    : current.condition.icon;
 
   useEffect(() => {
+    if (!iconCode) {
+      setIcon(apiIcon || "");
+      return;
+    }
+
     const getIcon = async () => {
       try {
         const image = await import(
@@ -23,8 +33,9 @@ const WeatherIcon = ({ current }) => {
       }
     };
 
+    setIcon("");
     getIcon();
-  }, [currentWeatherCode, iconCode, current.is_day]);
+  }, [currentWeatherCode, iconCode, current.is_day, apiIcon]);
 
   return (
     <>
