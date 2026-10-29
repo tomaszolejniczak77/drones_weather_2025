@@ -37,7 +37,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 38px;
+  gap: 0.35rem;
+  min-width: 78px;
+  height: 50px;
+  margin: 0 0.5rem 0 0;
+  padding: 0.5rem;
+  font-size: 0.9rem;
   text-decoration: none;
 }
 
