@@ -36,6 +36,11 @@
 
 .icon p {
   margin: 0;
+  width: 100%;
+  min-width: 0;
+  text-align: center;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
 }
 
 .tile p {
@@ -75,7 +80,4 @@
     height: 110px;
   }
 
-  .icon p {
-    text-align: center;
-  }
 }

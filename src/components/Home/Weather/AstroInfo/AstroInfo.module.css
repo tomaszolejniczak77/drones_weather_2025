@@ -13,6 +13,12 @@
 
 .astro p {
   margin: 0;
+  width: 100%;
+  min-width: 0;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.15;
 }
 
 .extraTitle {
@@ -29,7 +35,4 @@
     height: 110px;
   }
 
-  .astro p {
-    text-align: center;
-  }
 }
