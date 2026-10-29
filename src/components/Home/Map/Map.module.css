@@ -6,21 +6,3 @@
   color: red;
   text-align: center;
 }
-
-.officialZonesLink {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 44px;
-  padding: 0.55rem 1rem;
-  background-color: #16325b;
-  color: #e9efec;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-}
-
-.officialZonesLink:focus-visible {
-  outline: 3px solid goldenrod;
-  outline-offset: -3px;
-}

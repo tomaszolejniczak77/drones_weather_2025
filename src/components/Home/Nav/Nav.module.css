@@ -14,7 +14,14 @@
   justify-content: space-between;
 }
 
-.nav button {
+.navigationActions {
+  display: flex;
+  align-items: center;
+}
+
+.nav button,
+.airspaceLink {
+  box-sizing: border-box;
   background-color: #16325b;
   color: #e9efec;
   width: 50px;
@@ -24,4 +31,17 @@
   cursor: pointer;
   border: none;
   border-radius: 5px;
+}
+
+.airspaceLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  text-decoration: none;
+}
+
+.airspaceLink:focus-visible {
+  outline: 3px solid goldenrod;
+  outline-offset: 2px;
 }

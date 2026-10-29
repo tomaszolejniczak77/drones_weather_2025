@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Settings from "./components/Settings/Settings";
 import Info from "./components/Info/Info";
+import Airspace from "./components/Airspace/Airspace";
 import { LocationProvider } from "./context/LocationContext";
 import { WeatherProvider } from "./context/WeatherContext";
 import { SettingProvider } from "./context/SettingsContext";
@@ -19,6 +20,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/info" element={<Info />} />
                 <Route path="/settings" element={<Settings />} />
+                <Route path="/airspace" element={<Airspace />} />
               </Routes>
             </LanguageProvider>
           </SettingProvider>

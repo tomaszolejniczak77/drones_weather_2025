@@ -7,11 +7,9 @@ import "leaflet/dist/leaflet.css";
 import styles from "./Map.module.css";
 import { useContext } from "react";
 import { LocationContext } from "../../../context/LocationContext";
-import { LanguageContext } from "../../../context/LanguageContext";
 
 const Map = () => {
   const { position, setPosition } = useContext(LocationContext);
-  const { language } = useContext(LanguageContext);
   const [draggable, setDraggable] = useState(true);
 
   const DefaultIcon = L.icon({
@@ -58,16 +56,6 @@ const Map = () => {
           {/* <Popup></Popup> */}
         </Marker>
       </MapContainer>
-      <a
-        className={styles.officialZonesLink}
-        href="https://dronemap.pansa.pl/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {language === 0
-          ? "Sprawdź strefy lotnicze w DroneMap PAŻP ↗"
-          : "Check airspace zones in PANSA DroneMap ↗"}
-      </a>
     </>
   );
 };
