@@ -15,8 +15,16 @@ const Kp = () => {
       try {
         const response = await axios.get(baseURL);
         const currentData = response.data.length - 1;
-        const kpData = response.data[currentData][1];
-        setKp(kpData);
+        const latestReading = response.data[currentData];
+        const kpData = Array.isArray(latestReading)
+          ? latestReading[1]
+          : latestReading.Kp;
+
+        if (kpData === undefined || kpData === null) {
+          throw new Error("Kp data is missing from the latest NOAA reading.");
+        }
+
+        setKp(Number(kpData));
       } catch (err) {
         setError(err.message);
       }
